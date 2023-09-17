@@ -43,7 +43,7 @@ for file_path in csv_files_folder1:
         axs[i].set_title(f'Fourier Transform of Column {i + 1}')
         axs[i].grid(True)
 
-    # Lấy 100 giá trị
+    # Lấy 150 giá trị
     samples_100 = fft_magnitude[:150]
 
     # Tạo DataFrame từ mảng numpy
@@ -78,7 +78,7 @@ for file_path in csv_files_folder2:
         axs[i].set_title(f'Fourier Transform of Column {i + 1}')
         axs[i].grid(True)
 
-    # Lấy 100 giá trị
+    # Lấy 150 giá trị
     samples_100 = fft_magnitude[:150]
 
     # Tạo DataFrame từ mảng numpy
@@ -108,8 +108,8 @@ for file_path in glob.glob('Processed_Data_Train/*.csv'):
     train_features.append(data.values.flatten())
 
     file_name = Path(file_path).name
-    # Gán độ tuổi ngẫu nhiên cho mỗi tệp dữ liệu trong khoảng từ 8 đến 78
-    age_label = random.randint(8, 78)
+    # Gán độ tuổi ngẫu nhiên cho mỗi tệp dữ liệu trong khoảng từ 2 đến 78
+    age_label = random.randint(2, 78)
     train_labels.append(age_label)
 
 for file_path in glob.glob('Processed_Data_Test/*.csv'):
@@ -118,8 +118,8 @@ for file_path in glob.glob('Processed_Data_Test/*.csv'):
     test_features.append(data.values.flatten())
 
     file_name = Path(file_path).name
-    # Gán độ tuổi ngẫu nhiên cho mỗi tệp dữ liệu trong khoảng từ 8 đến 78
-    age_label = random.randint(8, 78)
+    # Gán độ tuổi ngẫu nhiên cho mỗi tệp dữ liệu trong khoảng từ 2 đến 78
+    age_label = random.randint(2, 78)
     test_labels.append(age_label)
 
 svm = SVR(kernel='linear')
